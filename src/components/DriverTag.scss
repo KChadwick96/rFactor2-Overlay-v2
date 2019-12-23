@@ -1,0 +1,74 @@
+@import "../scss/variables.scss";
+
+.driver-tag {
+  display: flex;
+
+  &__content {
+    padding: $spacing-large $spacing-larger;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    width: 300px;
+    border-radius: $border-radius;
+    border-bottom: 4px solid $color-destructive;
+    box-shadow: $box-shadow;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: $spacing-medium;
+  }
+
+  &__position {
+    font-size: 42px;
+    margin-right: $spacing-large;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__flag {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-top-right-radius: $border-radius;
+  }
+
+  &__pod {
+    padding: $spacing-small $spacing-medium;
+    border-radius: $border-radius;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: $font-size-small;
+    margin-right: $spacing-small;
+
+    &--constructive {
+      background-color: $color-constructive;
+    }
+  }
+
+  &__relative-pod-container {
+    margin-left: $spacing-medium;
+  }
+}
+
+.relative-pod {
+  background-color: $color-primary;
+  color: $color-white;
+  border-radius: $border-radius;
+  text-align: center;
+  font-size: $font-size-smaller;
+  margin-bottom: $spacing-small;
+
+  &__title {
+    background-color: #e3762d;
+    padding: $spacing-smaller;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &__difference {
+    font-weight: $font-weight-bold;
+    padding: $spacing-smaller $spacing-small;
+  }
+}
