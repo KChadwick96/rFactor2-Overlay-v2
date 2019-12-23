@@ -1,4 +1,4 @@
-@import "../scss/variables.scss";
+@import "../../scss/variables.scss";
 
 .driver-tag {
   display: flex;
@@ -61,7 +61,7 @@
   margin-bottom: $spacing-small;
 
   &__title {
-    background-color: #e3762d;
+    background-color: $color-action;
     padding: $spacing-smaller;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;

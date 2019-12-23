@@ -1,6 +1,9 @@
+@import "./variables.scss";
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  font-size: $font-size-medium;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
