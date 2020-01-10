@@ -12,16 +12,18 @@
 
   &__position {
     padding: $spacing-small 0;
-    background-color: $color-action;
+    background-color: $color-primary;
     font-weight: $font-weight-bold;
     border-bottom-left-radius: $border-radius;
     border-top-left-radius: $border-radius;
-    width: 24px;
+    width: 26px;
     text-align: center;
+    border-right-width: 3px;
+    border-right-style: solid;
   }
 
   &__name {
-    margin-left: $spacing-medium;
+    margin-left: $spacing-small;
     flex: auto;
   }
 
@@ -29,4 +31,18 @@
     margin-right: $spacing-small;
     font-weight: $font-weight-bold;
   }
+}
+
+.tyre-graphic {
+  background-color: #faed00;
+  color: black;
+  border-radius: 50%;
+  width: 17px;
+  text-align: center;
+  height: 17px;
+  vertical-align: baseline;
+  line-height: 17px;
+  font-weight: bold;
+  font-size: $font-size-smaller;
+  margin-left: $spacing-small;
 }
