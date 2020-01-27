@@ -1,0 +1,24 @@
+@import "../../scss/variables.scss";
+
+.lap-counter {
+  padding: $spacing-large;
+  background-color: $color-primary-dark;
+  width: 140px;
+  color: $color-white;
+  font-size: $font-size-large;
+  border-radius: $border-radius;
+  text-align: center;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+
+  .lap-counter__session {
+    flex: 1;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+
+  .lap-counter__laps {
+    flex: 1;
+  }
+}
