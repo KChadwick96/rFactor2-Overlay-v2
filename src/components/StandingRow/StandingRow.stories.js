@@ -2,8 +2,30 @@ import React from "react";
 
 import StandingRow from "./StandingRow";
 
-export const normal = () => (
-  <div style={{ maxWidth: "240px" }}>
+export const leader = () => (
+  <StandingRow
+    position={1}
+    driverName="Chadwick"
+    driverNameCode="CHA"
+    teamColour="red"
+    gapToLeader={0}
+  />
+);
+
+export const pit = () => (
+  <StandingRow
+    position={12}
+    driverName="Mangan"
+    driverNameCode="MAN"
+    teamColour="yellow"
+    gapToLeader={4.3}
+    interval={3.1}
+    pit
+  />
+);
+
+export const multiple = () => (
+  <>
     <StandingRow
       position={1}
       driverName="Chadwick"
@@ -26,10 +48,11 @@ export const normal = () => (
       teamColour="yellow"
       gapToLeader={4.3}
       interval={3.1}
+      pit
     />
-  </div>
+  </>
 );
 
 export default {
-  title: "Standing Row"
+  title: "Components/Standing Row"
 };

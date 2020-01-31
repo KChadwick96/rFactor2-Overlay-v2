@@ -19,6 +19,7 @@ const StandingRow = ({
   teamColour,
   gapToLeader,
   interval,
+  pit,
   variant = VARIANTS.INTERVAL_GAP
 }) => {
   const name = variant === VARIANTS.POSITION ? driverName : driverNameCode;
@@ -41,15 +42,18 @@ const StandingRow = ({
 
   return (
     <li className="standing-row">
-      <div
-        className="standing-row__position"
-        style={{ borderRightColor: teamColour }}
-      >
-        {position}
+      <div className="standing-row__wrapper">
+        <div
+          className="standing-row__position"
+          style={{ borderRightColor: teamColour }}
+        >
+          {position}
+        </div>
+        <TyreGraphic />
+        <div className="standing-row__name">{name}</div>
+        <div className="standing-row__interval">{gap}</div>
       </div>
-      <TyreGraphic />
-      <div className="standing-row__name">{name}</div>
-      <div className="standing-row__interval">{gap}</div>
+      {pit && <div className="standing-row__pit">pit</div>}
     </li>
   );
 };

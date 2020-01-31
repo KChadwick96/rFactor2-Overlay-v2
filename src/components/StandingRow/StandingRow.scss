@@ -2,13 +2,19 @@
 
 .standing-row {
   list-style: none;
-  display: flex;
-  align-items: center;
-  background-color: $color-primary-dark;
   color: $color-white;
-  border-radius: $border-radius;
   font-size: $font-size-small;
   margin-bottom: $spacing-smaller;
+  display: flex;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    border-radius: $border-radius;
+    background-color: $color-primary-dark;
+    width: 240px;
+  }
 
   &__position {
     padding: $spacing-small 0;
@@ -30,6 +36,16 @@
   &__interval {
     margin-right: $spacing-small;
     font-weight: $font-weight-bold;
+  }
+
+  &__pit {
+    margin: $spacing-smaller $spacing-small $spacing-smaller $spacing-small;
+    background-color: $color-action;
+    padding: $spacing-small;
+    border-radius: $border-radius;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-smaller;
   }
 }
 

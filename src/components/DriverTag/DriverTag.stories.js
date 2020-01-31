@@ -7,5 +7,5 @@ export const normal = () => (
 );
 
 export default {
-  title: "Driver Tag"
+  title: "Components/Driver Tag"
 };

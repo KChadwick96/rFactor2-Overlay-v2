@@ -23,33 +23,31 @@ const RelativePod = ({ nameCode, timeDifference, type }) => {
   );
 };
 
-const DriverTag = ({ name, position, team }) => {
-  return (
-    <div className="driver-tag">
-      <div className="driver-tag__banner">
-        <div className="driver-tag__content">
-          <div className="driver-tag__position">{position}</div>
-          <div className="driver-tag__details">
-            <p className="driver-tag__name">{name}</p>
-            {team && <p className="driver-tag__team">{team}</p>}
-          </div>
-
-          <img src={FLAG} alt="UK flag" className="driver-tag__flag" />
+const DriverTag = ({ name, position, team, className }) => (
+  <div className={`driver-tag ${className}`}>
+    <div className="driver-tag__banner">
+      <div className="driver-tag__content">
+        <div className="driver-tag__position">{position}</div>
+        <div className="driver-tag__details">
+          <p className="driver-tag__name">{name}</p>
+          {team && <p className="driver-tag__team">{team}</p>}
         </div>
 
-        <span className="driver-tag__pod">2 stops</span>
-        <span className="driver-tag__pod">Last 1:28.430</span>
-        <span className="driver-tag__pod driver-tag__pod--constructive">
-          Best 1:28.009
-        </span>
+        <img src={FLAG} alt="UK flag" className="driver-tag__flag" />
       </div>
 
-      <div className="driver-tag__relative-pod-container">
-        <RelativePod nameCode="CHA" timeDifference="0.478" type="ahead" />
-        <RelativePod nameCode="CAR" timeDifference="0.478" type="behind" />
-      </div>
+      <span className="driver-tag__pod">2 stops</span>
+      <span className="driver-tag__pod">Last 1:28.430</span>
+      <span className="driver-tag__pod driver-tag__pod--constructive">
+        Best 1:28.009
+      </span>
     </div>
-  );
-};
+
+    <div className="driver-tag__relative-pod-container">
+      <RelativePod nameCode="CHA" timeDifference="0.478" type="ahead" />
+      <RelativePod nameCode="CAR" timeDifference="0.478" type="behind" />
+    </div>
+  </div>
+);
 
 export default DriverTag;
