@@ -8,6 +8,10 @@
   display: flex;
   width: 100%;
 
+  &--out {
+    opacity: 0.5;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;

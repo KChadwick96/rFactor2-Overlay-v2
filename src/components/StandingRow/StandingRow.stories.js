@@ -24,6 +24,18 @@ export const pit = () => (
   />
 );
 
+export const out = () => (
+  <StandingRow
+    position={12}
+    driverName="Mangan"
+    driverNameCode="MAN"
+    teamColour="yellow"
+    gapToLeader={4.3}
+    interval={3.1}
+    out
+  />
+);
+
 export const multiple = () => (
   <>
     <StandingRow
@@ -49,6 +61,16 @@ export const multiple = () => (
       gapToLeader={4.3}
       interval={3.1}
       pit
+    />
+    <StandingRow
+      position={13}
+      driverName="Baxter"
+      driverNameCode="BAX"
+      teamColour="purple"
+      gapToLeader={100.3}
+      interval={40.1}
+      pit
+      out
     />
   </>
 );

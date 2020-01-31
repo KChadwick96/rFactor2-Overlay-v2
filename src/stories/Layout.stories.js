@@ -27,15 +27,44 @@ const STANDINGS = [
     gapToLeader: 4.3,
     interval: 3.1,
     pit: true
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1,
+    out: true
   }
 ];
 
 export const standard = () => (
-  <div style={{ height: "700px", position: "relative" }}>
+  <div className="container-example">
     <LapCounter
       currentLap={1}
       totalLaps={20}
       className="--margin-bottom-large"
+    />
+    {STANDINGS.map((props, index) => (
+      <StandingRow position={index + 1} {...props} />
+    ))}
+
+    <DriverTag
+      position={1}
+      name="Kieran Chadwick"
+      team="A racing team"
+      className="onboard-example"
+    />
+  </div>
+);
+
+export const yellow = () => (
+  <div className="container-example">
+    <LapCounter
+      currentLap={1}
+      totalLaps={20}
+      className="--margin-bottom-large"
+      state="YELLOW"
     />
     {STANDINGS.map((props, index) => (
       <StandingRow position={index + 1} {...props} />

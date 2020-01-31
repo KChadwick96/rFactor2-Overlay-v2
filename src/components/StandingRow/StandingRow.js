@@ -20,12 +20,17 @@ const StandingRow = ({
   gapToLeader,
   interval,
   pit,
+  out,
   variant = VARIANTS.INTERVAL_GAP
 }) => {
   const name = variant === VARIANTS.POSITION ? driverName : driverNameCode;
 
   const gap = useMemo(() => {
     let value = 0;
+
+    if (out) {
+      return "OUT";
+    }
 
     if (variant === VARIANTS.INTERVAL_GAP) {
       if (position === 1) return "Interval";
@@ -38,10 +43,10 @@ const StandingRow = ({
     }
 
     return `+${value.toFixed(3)}`;
-  }, [position, variant, interval, gapToLeader]);
+  }, [position, variant, interval, gapToLeader, out]);
 
   return (
-    <li className="standing-row">
+    <li className={`standing-row ${out ? "standing-row--out" : ""}`}>
       <div className="standing-row__wrapper">
         <div
           className="standing-row__position"
