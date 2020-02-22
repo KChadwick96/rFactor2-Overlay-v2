@@ -1,6 +1,7 @@
 import React from "react";
+import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
-import StandingRow from "./StandingRow";
+import StandingRow, { VARIANTS } from "./StandingRow";
 
 export const leader = () => (
   <StandingRow
@@ -12,27 +13,21 @@ export const leader = () => (
   />
 );
 
-export const pit = () => (
+export const custom = () => (
   <StandingRow
     position={12}
-    driverName="Mangan"
-    driverNameCode="MAN"
-    teamColour="yellow"
+    driverName={text("driverName", "Mangan")}
+    driverNameCode={text("driverNameCode", "MAN")}
+    teamColour={text("teamColour", "purple")}
     gapToLeader={4.3}
     interval={3.1}
-    pit
-  />
-);
-
-export const out = () => (
-  <StandingRow
-    position={12}
-    driverName="Mangan"
-    driverNameCode="MAN"
-    teamColour="yellow"
-    gapToLeader={4.3}
-    interval={3.1}
-    out
+    pit={boolean("pit", true)}
+    out={boolean("out", false)}
+    variant={select(
+      "mode",
+      [VARIANTS.INTERVAL_GAP, VARIANTS.LEADER_GAP, VARIANTS.POSITION],
+      VARIANTS.INTERVAL_GAP
+    )}
   />
 );
 
@@ -76,5 +71,6 @@ export const multiple = () => (
 );
 
 export default {
-  title: "Components/Standing Row"
+  title: "Components/Standing Row",
+  decorators: [withKnobs]
 };

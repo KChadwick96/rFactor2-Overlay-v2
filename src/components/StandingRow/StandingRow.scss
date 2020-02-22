@@ -6,11 +6,8 @@
   font-size: $font-size-small;
   margin-bottom: $spacing-smaller;
   display: flex;
+  align-items: center;
   width: 100%;
-
-  &--out {
-    opacity: 0.5;
-  }
 
   &__wrapper {
     display: flex;

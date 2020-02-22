@@ -1,16 +1,30 @@
 import React, { useMemo } from "react";
+import { motion } from "framer-motion";
 
 import "./StandingRow.scss";
 
-const VARIANTS = {
+export const VARIANTS = {
   INTERVAL_GAP: "interval-gap",
   LEADER_GAP: "leader-gap",
   POSITION: "position"
 };
 
+const TRANSITION_DURATION = 0.3;
+
 const TyreGraphic = () => {
   return <div className="tyre-graphic">M</div>;
 };
+
+const Pit = ({ active }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: active ? 1 : 0 }}
+    transition={{ duration: TRANSITION_DURATION }}
+    className="standing-row__pit"
+  >
+    pit
+  </motion.div>
+);
 
 const StandingRow = ({
   position,
@@ -46,7 +60,11 @@ const StandingRow = ({
   }, [position, variant, interval, gapToLeader, out]);
 
   return (
-    <li className={`standing-row ${out ? "standing-row--out" : ""}`}>
+    <motion.li
+      className="standing-row"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: out ? 0.5 : 1 }}
+    >
       <div className="standing-row__wrapper">
         <div
           className="standing-row__position"
@@ -56,10 +74,12 @@ const StandingRow = ({
         </div>
         <TyreGraphic />
         <div className="standing-row__name">{name}</div>
-        <div className="standing-row__interval">{gap}</div>
+        {variant !== VARIANTS.POSITION && (
+          <div className="standing-row__interval">{gap}</div>
+        )}
       </div>
-      {pit && <div className="standing-row__pit">pit</div>}
-    </li>
+      <Pit active={pit} />
+    </motion.li>
   );
 };
 
