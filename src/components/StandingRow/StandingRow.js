@@ -5,6 +5,12 @@ import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 import usePrevious from "../../hooks/usePrevious";
 import "./StandingRow.scss";
 
+const spring = {
+  type: "spring",
+  damping: 20,
+  stiffness: 100
+};
+
 export const VARIANTS = {
   INTERVAL_GAP: "interval-gap",
   LEADER_GAP: "leader-gap",
@@ -92,6 +98,7 @@ const StandingRow = ({
   return (
     <motion.li
       className="standing-row"
+      layoutTransition={spring}
       initial={{ opacity: 1 }}
       animate={{ opacity: out ? 0.5 : 1 }}
     >

@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import "./LapCounter.scss";
 import flag from "../../img/checkered-flag.jpg";
 
-const STATES = {
+export const STATES = {
   GREEN: "GREEN",
   FINISHED: "FINISHED",
   YELLOW: "YELLOW",

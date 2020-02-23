@@ -1,15 +1,21 @@
 import React from "react";
+import { number, select, withKnobs } from "@storybook/addon-knobs";
 
-import LapCounter from "./LapCounter";
+import LapCounter, { STATES } from "./LapCounter";
 
-export const standard = () => <LapCounter currentLap={1} totalLaps={24} />;
-export const yellow = () => (
-  <LapCounter currentLap={4} totalLaps={37} state="YELLOW" />
-);
-export const finished = () => (
-  <LapCounter currentLap={24} totalLaps={24} state="FINISHED" />
+export const custom = () => (
+  <LapCounter
+    currentLap={number("currentLap", 4)}
+    totalLaps={number("totalLaps", 37)}
+    state={select(
+      "state",
+      [STATES.GREEN, STATES.YELLOW, STATES.RED, STATES.FINISHED],
+      STATES.GREEN
+    )}
+  />
 );
 
 export default {
-  title: "Components/Lap Counter"
+  title: "Components/Lap Counter",
+  decorators: [withKnobs]
 };
