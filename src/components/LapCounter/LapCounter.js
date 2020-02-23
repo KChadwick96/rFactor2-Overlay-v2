@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { Fragment, useMemo } from "react";
 
 import "./LapCounter.scss";
 import flag from "../../img/checkered-flag.jpg";
@@ -29,21 +29,21 @@ const LapCounter = ({
   return (
     <div className={classNames}>
       {state === STATES.FINISHED ? (
-        <>
+        <Fragment>
           <img
             className="lap-counter__checkered"
             src={flag}
             alt="Checkered flag"
           />
           <p className="--width-100">FINISHED</p>
-        </>
+        </Fragment>
       ) : (
-        <>
+        <Fragment>
           <div className="lap-counter__session">Lap</div>
           <div className="lap-counter__laps">
             {currentLap}/{totalLaps}
           </div>
-        </>
+        </Fragment>
       )}
     </div>
   );
