@@ -4,7 +4,32 @@ import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 
 import usePrevious from "../../hooks/usePrevious";
 
+const ICON_SIZE = "18px";
 const POSITION_CHANGE_DURATION = 4000;
+
+const ANIMATIONS = {
+  container: {
+    gain: {
+      backgroundColor: "#1cad10"
+    },
+    loss: {
+      backgroundColor: "#bf0000"
+    },
+    normal: {
+      backgroundColor: "#072047"
+    }
+  },
+  arrow: {
+    gain: {
+      y: -6,
+      opacity: 0
+    },
+    loss: {
+      y: 6,
+      opacity: 0
+    }
+  }
+};
 
 const getPositionChangeVariant = value => {
   const map = {
@@ -26,6 +51,7 @@ const Position = ({ position, teamColour }) => {
       return;
     }
 
+    clearTimeout(positionChangeTimeout.current);
     setPositionChange(position < previousPosition ? 1 : -1);
 
     positionChangeTimeout.current = setTimeout(
@@ -38,40 +64,20 @@ const Position = ({ position, teamColour }) => {
     <motion.div
       className="standing-row__position"
       style={{ borderRightColor: teamColour }}
-      variants={{
-        gain: {
-          backgroundColor: "#1cad10"
-        },
-        loss: {
-          backgroundColor: "#bf0000"
-        },
-        normal: {
-          backgroundColor: "#072047"
-        }
-      }}
+      variants={ANIMATIONS.container}
       animate={getPositionChangeVariant(positionChange)}
     >
       {positionChange === 0 ? (
         position
       ) : (
         <motion.span
-          animate={getPositionChangeVariant(positionChange)}
-          variants={{
-            gain: {
-              y: -6,
-              opacity: 0
-            },
-            loss: {
-              y: 6,
-              opacity: 0
-            }
-          }}
+          variants={ANIMATIONS.arrow}
           transition={{ loop: Infinity, duration: 0.8, repeatDelay: 0.2 }}
         >
           {positionChange === 1 ? (
-            <FiArrowUp size="18px" />
+            <FiArrowUp size={ICON_SIZE} />
           ) : (
-            <FiArrowDown size="18px" />
+            <FiArrowDown size={ICON_SIZE} />
           )}
         </motion.span>
       )}
