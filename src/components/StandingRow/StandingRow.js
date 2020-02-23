@@ -1,6 +1,8 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 
+import usePrevious from "../../hooks/usePrevious";
 import "./StandingRow.scss";
 
 export const VARIANTS = {
@@ -10,6 +12,7 @@ export const VARIANTS = {
 };
 
 const TRANSITION_DURATION = 0.3;
+const POSITION_CHANGE_DURATION = 4000;
 
 const TyreGraphic = () => {
   return <div className="tyre-graphic">M</div>;
@@ -26,6 +29,16 @@ const Pit = ({ active }) => (
   </motion.div>
 );
 
+const getPositionChangeVariant = value => {
+  const map = {
+    0: "normal",
+    1: "gain",
+    [-1]: "loss"
+  };
+
+  return map[value];
+};
+
 const StandingRow = ({
   position,
   driverName,
@@ -37,14 +50,17 @@ const StandingRow = ({
   out,
   variant = VARIANTS.INTERVAL_GAP
 }) => {
+  const [positionChange, setPositionChange] = useState(0);
+  const previousPosition = usePrevious(position);
   const name = variant === VARIANTS.POSITION ? driverName : driverNameCode;
+  const positionChangeTimeout = useRef();
 
   const gap = useMemo(() => {
-    let value = 0;
-
     if (out) {
       return "OUT";
     }
+
+    let value = 0;
 
     if (variant === VARIANTS.INTERVAL_GAP) {
       if (position === 1) return "Interval";
@@ -59,6 +75,20 @@ const StandingRow = ({
     return `+${value.toFixed(3)}`;
   }, [position, variant, interval, gapToLeader, out]);
 
+  useEffect(() => {
+    if (!previousPosition || previousPosition === position) {
+      return;
+    }
+
+    clearTimeout(positionChangeTimeout.current);
+    setPositionChange(position < previousPosition ? 1 : -1);
+
+    positionChangeTimeout.current = setTimeout(
+      () => setPositionChange(0),
+      POSITION_CHANGE_DURATION
+    );
+  }, [position, previousPosition]);
+
   return (
     <motion.li
       className="standing-row"
@@ -66,12 +96,47 @@ const StandingRow = ({
       animate={{ opacity: out ? 0.5 : 1 }}
     >
       <div className="standing-row__wrapper">
-        <div
+        <motion.div
           className="standing-row__position"
           style={{ borderRightColor: teamColour }}
+          variants={{
+            gain: {
+              backgroundColor: "#1cad10"
+            },
+            loss: {
+              backgroundColor: "#bf0000"
+            },
+            normal: {
+              backgroundColor: "#072047"
+            }
+          }}
+          animate={getPositionChangeVariant(positionChange)}
         >
-          {position}
-        </div>
+          {positionChange === 0 ? (
+            position
+          ) : (
+            <motion.span
+              animate={getPositionChangeVariant(positionChange)}
+              variants={{
+                gain: {
+                  y: -6,
+                  opacity: 0
+                },
+                loss: {
+                  y: 6,
+                  opacity: 0
+                }
+              }}
+              transition={{ loop: Infinity, duration: 0.8, repeatDelay: 0.2 }}
+            >
+              {positionChange === 1 ? (
+                <FiArrowUp size="18px" />
+              ) : (
+                <FiArrowDown size="18px" />
+              )}
+            </motion.span>
+          )}
+        </motion.div>
         <TyreGraphic />
         <div className="standing-row__name">{name}</div>
         {variant !== VARIANTS.POSITION && (

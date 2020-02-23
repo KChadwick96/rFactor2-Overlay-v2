@@ -6,6 +6,7 @@
     "framer-motion": "^1.8.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-icons": "^3.9.0",
     "react-scripts": "3.4.0"
   },
   "devDependencies": {

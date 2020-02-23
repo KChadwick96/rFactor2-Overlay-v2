@@ -1,5 +1,11 @@
 import React from "react";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
+import {
+  withKnobs,
+  text,
+  boolean,
+  select,
+  number
+} from "@storybook/addon-knobs";
 
 import StandingRow, { VARIANTS } from "./StandingRow";
 
@@ -15,7 +21,7 @@ export const leader = () => (
 
 export const custom = () => (
   <StandingRow
-    position={12}
+    position={number("position", 12)}
     driverName={text("driverName", "Mangan")}
     driverNameCode={text("driverNameCode", "MAN")}
     teamColour={text("teamColour", "purple")}
