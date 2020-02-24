@@ -47,6 +47,12 @@ const Position = ({ position, teamColour }) => {
   const [positionChange, setPositionChange] = useState(0);
 
   useEffect(() => {
+    return () => {
+      clearTimeout(positionChangeTimeout.current);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!previousPosition || previousPosition === position) {
       return;
     }
