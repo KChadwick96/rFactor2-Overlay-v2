@@ -29,11 +29,12 @@ export const custom = () => (
     teamColour={color("teamColour", "purple")}
     gapToLeader={4.3}
     interval={3.1}
+    fastestLap={"1:26.444"}
     pit={boolean("pit", true)}
     out={boolean("out", false)}
     variant={select(
       "mode",
-      [VARIANTS.INTERVAL_GAP, VARIANTS.LEADER_GAP, VARIANTS.POSITION],
+      [VARIANTS.INTERVAL_GAP, VARIANTS.LEADER_GAP, VARIANTS.FASTEST_LAP, VARIANTS.POSITION],
       VARIANTS.INTERVAL_GAP
     )}
   />

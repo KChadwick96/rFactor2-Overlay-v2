@@ -1,7 +1,8 @@
 import React from "react";
 
 import LapCounter from "../components/LapCounter/LapCounter";
-import StandingRow from "../components/StandingRow/StandingRow";
+import SessionTimer from "../components/SessionTimer/SessionTimer";
+import StandingRow, { VARIANTS } from "../components/StandingRow/StandingRow";
 import DriverTag from "../components/DriverTag/DriverTag";
 
 import "./LayoutExample.scss";
@@ -11,6 +12,7 @@ const STANDINGS = [
     driverName: "Chadwick",
     driverNameCode: "CHA",
     teamColour: "red",
+    fastestLap: "1:26.444",
     gapToLeader: 0
   },
   {
@@ -38,7 +40,7 @@ const STANDINGS = [
   }
 ];
 
-export const standard = () => (
+export const raceStandard = () => (
   <div className="container-example">
     <LapCounter
       currentLap={1}
@@ -58,7 +60,7 @@ export const standard = () => (
   </div>
 );
 
-export const yellow = () => (
+export const raceYellow = () => (
   <div className="container-example">
     <LapCounter
       currentLap={1}
@@ -78,6 +80,32 @@ export const yellow = () => (
     />
   </div>
 );
+
+export const timedStandard = () => (
+  <div className="container-example">
+    <SessionTimer
+      session="Q3"
+      sessionTime="12:00"
+      className="--margin-bottom-large"
+    />
+    {STANDINGS.map((props, index) => (
+      <StandingRow
+        position={index + 1}
+        {...props}
+        variant={index === 0 ? VARIANTS.FASTEST_LAP : VARIANTS.LEADER_GAP}
+      />
+    ))}
+
+    <DriverTag
+      position={1}
+      name="Kieran Chadwick"
+      team="A racing team"
+      className="onboard-example"
+    />
+  </div>
+);
+
+
 
 export default {
   title: "Layout"
