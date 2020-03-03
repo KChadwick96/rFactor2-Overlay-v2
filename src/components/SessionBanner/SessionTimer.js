@@ -1,14 +1,7 @@
 import React, { Fragment, useMemo } from "react";
 
-import "./SessionTimer.scss";
+import { STATES } from './SessionBanner'
 import flag from "../../img/checkered-flag.jpg";
-
-export const STATES = {
-  GREEN: "GREEN",
-  FINISHED: "FINISHED",
-  YELLOW: "YELLOW",
-  RED: "RED"
-};
 
 const SessionTimer = ({
   session,
@@ -19,8 +12,9 @@ const SessionTimer = ({
   const classNames = useMemo(
     () =>
       [
-        "session-timer",
-        state === STATES.YELLOW ? "session-timer--yellow" : "",
+        "session-banner",
+        "session-banner--timer",
+        state === STATES.YELLOW ? "session-banner--yellow" : "",
         className
       ].join(" "),
     [className, state]
@@ -31,7 +25,7 @@ const SessionTimer = ({
       {state === STATES.FINISHED ? (
         <Fragment>
           <img
-            className="session-timer__checkered"
+            className="session-banner__checkered"
             src={flag}
             alt="Checkered flag"
           />
@@ -39,10 +33,8 @@ const SessionTimer = ({
         </Fragment>
       ) : (
         <Fragment>
-          <div className="session-timer__session">{session}</div>
-          <div className="session-timer__time">
-            {sessionTime}
-          </div>
+          <div className="session-banner__session">{session}</div>
+          <div className="session-banner__time">{sessionTime}</div>
         </Fragment>
       )}
     </div>

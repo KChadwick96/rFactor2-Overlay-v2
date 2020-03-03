@@ -1,14 +1,7 @@
 import React, { Fragment, useMemo } from "react";
 
-import "./LapCounter.scss";
+import { STATES } from './SessionBanner'
 import flag from "../../img/checkered-flag.jpg";
-
-export const STATES = {
-  GREEN: "GREEN",
-  FINISHED: "FINISHED",
-  YELLOW: "YELLOW",
-  RED: "RED"
-};
 
 const LapCounter = ({
   currentLap,
@@ -19,8 +12,9 @@ const LapCounter = ({
   const classNames = useMemo(
     () =>
       [
-        "lap-counter",
-        state === STATES.YELLOW ? "lap-counter--yellow" : "",
+        "session-banner",
+        "session-banner--counter",
+        state === STATES.YELLOW ? "session-banner--yellow" : "",
         className
       ].join(" "),
     [className, state]
@@ -31,7 +25,7 @@ const LapCounter = ({
       {state === STATES.FINISHED ? (
         <Fragment>
           <img
-            className="lap-counter__checkered"
+            className="session-banner__checkered"
             src={flag}
             alt="Checkered flag"
           />
@@ -39,8 +33,8 @@ const LapCounter = ({
         </Fragment>
       ) : (
         <Fragment>
-          <div className="lap-counter__session">Lap</div>
-          <div className="lap-counter__laps">
+          <div className="session-banner__lap-heading">Lap</div>
+          <div className="session-banner__lap-count">
             {currentLap}/{totalLaps}
           </div>
         </Fragment>

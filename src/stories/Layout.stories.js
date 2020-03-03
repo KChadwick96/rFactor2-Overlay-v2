@@ -1,7 +1,9 @@
 import React from "react";
 
-import LapCounter from "../components/LapCounter/LapCounter";
-import SessionTimer from "../components/SessionTimer/SessionTimer";
+import SessionBanner, {
+  STATES,
+  SESSIONS
+} from "../components/SessionBanner/SessionBanner";
 import StandingRow, { VARIANTS } from "../components/StandingRow/StandingRow";
 import DriverTag from "../components/DriverTag/DriverTag";
 
@@ -42,9 +44,11 @@ const STANDINGS = [
 
 export const raceStandard = () => (
   <div className="container-example">
-    <LapCounter
+    <SessionBanner
+      session={SESSIONS.RACE}
       currentLap={1}
       totalLaps={20}
+      state={STATES.GREEN}
       className="--margin-bottom-large"
     />
     {STANDINGS.map((props, index) => (
@@ -62,11 +66,13 @@ export const raceStandard = () => (
 
 export const raceYellow = () => (
   <div className="container-example">
-    <LapCounter
+    <SessionBanner
+      session={SESSIONS.RACE}
       currentLap={1}
-      totalLaps={20}
+      totalLaps={20}    
+      state={STATES.YELLOW}
       className="--margin-bottom-large"
-      state="YELLOW"
+
     />
     {STANDINGS.map((props, index) => (
       <StandingRow position={index + 1} {...props} />
@@ -83,9 +89,10 @@ export const raceYellow = () => (
 
 export const timedStandard = () => (
   <div className="container-example">
-    <SessionTimer
-      session="Q3"
+    <SessionBanner
+      session={SESSIONS.QUALIFY2}
       sessionTime="12:00"
+      state={STATES.GREEN}
       className="--margin-bottom-large"
     />
     {STANDINGS.map((props, index) => (
@@ -104,8 +111,6 @@ export const timedStandard = () => (
     />
   </div>
 );
-
-
 
 export default {
   title: "Layout"

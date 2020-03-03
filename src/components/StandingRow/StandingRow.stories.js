@@ -29,7 +29,7 @@ export const custom = () => (
     teamColour={color("teamColour", "purple")}
     gapToLeader={4.3}
     interval={3.1}
-    fastestLap={"1:26.444"}
+    fastestLap={text("fastestLap", "1:26.444")}
     pit={boolean("pit", true)}
     out={boolean("out", false)}
     variant={select(
