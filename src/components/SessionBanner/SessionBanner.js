@@ -27,7 +27,6 @@ const SessionBanner = ({
   state = STATES.GREEN,
   className = ""
 }) => {
-
   const isRace = session === SESSIONS.RACE;
   const classNames = useMemo(
     () =>
@@ -37,8 +36,7 @@ const SessionBanner = ({
         state === STATES.YELLOW ? "session-banner--yellow" : "",
         className
       ].join(" "),
-
-    [className, state]
+    [className, state, isRace]
   );
 
   return (
