@@ -2,7 +2,7 @@
 
 .fastest-lap {
   background-color: $color-primary-dark;
-  width: 400px;
+  width: 450px;
   height: 40px;
   color: $color-white;
   font-size: $font-size-large;
@@ -11,13 +11,13 @@
   box-shadow: $box-shadow;
   display: flex;
   align-items: center;
-  position: relative;
   justify-content: space-between;
 
   &__header {
-    padding: 0 8px;
-    background-color: $color-primary;
+    padding: 0 $spacing-large;
+    background-color: $color-purple;
     line-height: 40px;
+    font-weight: $font-weight-bold;
   }
 
   &__name {

@@ -1,9 +1,18 @@
 .container-example {
   height: 840px;
   position: relative;
+  width: 100%;
 }
 
 .onboard-example {
   position: absolute;
   bottom: 0;
+}
+
+.fastest-lap-example {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }

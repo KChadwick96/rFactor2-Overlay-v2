@@ -1,11 +1,9 @@
 import React from "react";
 
-import SessionBanner, {
-  STATES,
-  SESSIONS
-} from "../components/SessionBanner/SessionBanner";
+import SessionBanner, { STATES, SESSIONS } from "../components/SessionBanner/SessionBanner";
 import StandingRow, { VARIANTS } from "../components/StandingRow/StandingRow";
 import DriverTag from "../components/DriverTag/DriverTag";
+import FastestLap from "../components/FastestLap/FastestLap";
 
 import "./LayoutExample.scss";
 
@@ -55,12 +53,9 @@ export const raceStandard = () => (
       <StandingRow position={index + 1} {...props} />
     ))}
 
-    <DriverTag
-      position={1}
-      name="Kieran Chadwick"
-      team="A racing team"
-      className="onboard-example"
-    />
+    <FastestLap driverName="Kieran Chadwick" lapTime="1:27.456" className="fastest-lap-example" />
+
+    <DriverTag position={1} name="Kieran Chadwick" team="A racing team" className="onboard-example" />
   </div>
 );
 
@@ -69,21 +64,15 @@ export const raceYellow = () => (
     <SessionBanner
       session={SESSIONS.RACE}
       currentLap={1}
-      totalLaps={20}    
+      totalLaps={20}
       state={STATES.YELLOW}
       className="--margin-bottom-large"
-
     />
     {STANDINGS.map((props, index) => (
       <StandingRow position={index + 1} {...props} />
     ))}
 
-    <DriverTag
-      position={1}
-      name="Kieran Chadwick"
-      team="A racing team"
-      className="onboard-example"
-    />
+    <DriverTag position={1} name="Kieran Chadwick" team="A racing team" className="onboard-example" />
   </div>
 );
 
@@ -96,19 +85,10 @@ export const timedStandard = () => (
       className="--margin-bottom-large"
     />
     {STANDINGS.map((props, index) => (
-      <StandingRow
-        position={index + 1}
-        {...props}
-        variant={index === 0 ? VARIANTS.FASTEST_LAP : VARIANTS.LEADER_GAP}
-      />
+      <StandingRow position={index + 1} {...props} variant={index === 0 ? VARIANTS.FASTEST_LAP : VARIANTS.LEADER_GAP} />
     ))}
 
-    <DriverTag
-      position={1}
-      name="Kieran Chadwick"
-      team="A racing team"
-      className="onboard-example"
-    />
+    <DriverTag position={1} name="Kieran Chadwick" team="A racing team" className="onboard-example" />
   </div>
 );
 
