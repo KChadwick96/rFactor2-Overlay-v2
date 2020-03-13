@@ -1,0 +1,31 @@
+@import "../../scss/variables.scss";
+
+.fastest-lap {
+  background-color: $color-primary-dark;
+  width: 400px;
+  height: 40px;
+  color: $color-white;
+  font-size: $font-size-large;
+  border-radius: $border-radius;
+  text-align: center;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+
+  &__header {
+    padding: 0 8px;
+    background-color: $color-primary;
+    line-height: 40px;
+  }
+
+  &__name {
+    padding: $spacing-medium;
+  }
+
+  &__time {
+    font-weight: 700;
+    padding: $spacing-medium;
+  }
+}

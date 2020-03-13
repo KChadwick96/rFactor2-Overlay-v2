@@ -1,6 +1,6 @@
 @import "../../scss/variables.scss";
 
-.lap-counter {
+.session-banner {
   padding: $spacing-medium;
   background-color: $color-primary-dark;
   width: 140px;
@@ -12,6 +12,10 @@
   display: flex;
   align-items: center;
   position: relative;
+
+  &--timer {
+    justify-content: space-around;
+  }
 
   &--yellow {
     color: $color-black;
@@ -32,13 +36,14 @@
     width: 100%;
   }
 
-  &__session {
+  &__heading {
     flex: 1;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
   }
 
-  &__laps {
+
+  &__text {
     flex: 1;
   }
 }

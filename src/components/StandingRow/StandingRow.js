@@ -13,7 +13,8 @@ const spring = {
 export const VARIANTS = {
   INTERVAL_GAP: "interval-gap",
   LEADER_GAP: "leader-gap",
-  POSITION: "position"
+  POSITION: "position",
+  FASTEST_LAP: "fatest-time"
 };
 
 const TRANSITION_DURATION = 0.3;
@@ -38,6 +39,7 @@ const StandingRow = ({
   teamColour,
   gapToLeader,
   interval,
+  fastestLap,
   pit,
   out,
   variant = VARIANTS.INTERVAL_GAP
@@ -61,8 +63,12 @@ const StandingRow = ({
       value = gapToLeader;
     }
 
+    if (variant === VARIANTS.FASTEST_LAP) {
+      return fastestLap;
+    }
+
     return `+${value.toFixed(3)}`;
-  }, [position, variant, interval, gapToLeader, out]);
+  }, [position, variant, interval, gapToLeader, fastestLap, out]);
 
   return (
     <motion.li

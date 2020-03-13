@@ -1,7 +1,10 @@
 import React from "react";
 
-import LapCounter from "../components/LapCounter/LapCounter";
-import StandingRow from "../components/StandingRow/StandingRow";
+import SessionBanner, {
+  STATES,
+  SESSIONS
+} from "../components/SessionBanner/SessionBanner";
+import StandingRow, { VARIANTS } from "../components/StandingRow/StandingRow";
 import DriverTag from "../components/DriverTag/DriverTag";
 
 import "./LayoutExample.scss";
@@ -11,6 +14,7 @@ const STANDINGS = [
     driverName: "Chadwick",
     driverNameCode: "CHA",
     teamColour: "red",
+    fastestLap: "1:26.444",
     gapToLeader: 0
   },
   {
@@ -38,11 +42,13 @@ const STANDINGS = [
   }
 ];
 
-export const standard = () => (
+export const raceStandard = () => (
   <div className="container-example">
-    <LapCounter
+    <SessionBanner
+      session={SESSIONS.RACE}
       currentLap={1}
       totalLaps={20}
+      state={STATES.GREEN}
       className="--margin-bottom-large"
     />
     {STANDINGS.map((props, index) => (
@@ -58,16 +64,43 @@ export const standard = () => (
   </div>
 );
 
-export const yellow = () => (
+export const raceYellow = () => (
   <div className="container-example">
-    <LapCounter
+    <SessionBanner
+      session={SESSIONS.RACE}
       currentLap={1}
-      totalLaps={20}
+      totalLaps={20}    
+      state={STATES.YELLOW}
       className="--margin-bottom-large"
-      state="YELLOW"
+
     />
     {STANDINGS.map((props, index) => (
       <StandingRow position={index + 1} {...props} />
+    ))}
+
+    <DriverTag
+      position={1}
+      name="Kieran Chadwick"
+      team="A racing team"
+      className="onboard-example"
+    />
+  </div>
+);
+
+export const timedStandard = () => (
+  <div className="container-example">
+    <SessionBanner
+      session={SESSIONS.QUALIFY2}
+      sessionTime="12:00"
+      state={STATES.GREEN}
+      className="--margin-bottom-large"
+    />
+    {STANDINGS.map((props, index) => (
+      <StandingRow
+        position={index + 1}
+        {...props}
+        variant={index === 0 ? VARIANTS.FASTEST_LAP : VARIANTS.LEADER_GAP}
+      />
     ))}
 
     <DriverTag
