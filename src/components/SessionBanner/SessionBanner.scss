@@ -36,18 +36,14 @@
     width: 100%;
   }
 
-  &__session {
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-  }
-
-  &__lap-heading {
+  &__heading {
     flex: 1;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
   }
 
-  &__lap-count {
+
+  &__text {
     flex: 1;
   }
 }
