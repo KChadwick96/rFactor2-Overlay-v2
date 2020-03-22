@@ -1,12 +1,18 @@
 .container-example {
-  height: 840px;
+  width: 1920px;
+  height: 1080px;
   position: relative;
-  width: 100%;
+  background-image: url(../img/onboard.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(0.7);
+  transform-origin: 0 0;
+  padding: 60px 100px;
 }
 
 .onboard-example {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
 }
 
 .fastest-lap-example {

@@ -2,7 +2,7 @@
 
 .fastest-lap {
   color: $color-white;
-  height: 70px;
+  height: 80px;
   font-size: $font-size-large;
   box-shadow: $box-shadow;
   position: relative;
@@ -37,5 +37,7 @@
     padding-left: $spacing-largest;
     font-size: $font-size-largest;
     font-weight: $font-weight-bold;
+    flex: 1;
+    padding-right: $spacing-large;
   }
 }

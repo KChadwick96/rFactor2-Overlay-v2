@@ -5,6 +5,7 @@ import StandingRow, { VARIANTS } from "../components/StandingRow/StandingRow";
 import DriverTag from "../components/DriverTag/DriverTag";
 import FastestLap from "../components/FastestLap/FastestLap";
 
+import onboard from "../img/onboard.jpg";
 import "./LayoutExample.scss";
 
 const STANDINGS = [
