@@ -14,7 +14,7 @@ const DEFAULT_SPRING = {
 
 const FastestLap = ({ firstName, lastName, lapTime, className }) => {
   const classNames = useMemo(() => ["fastest-lap", className].join(" "), [className]);
-  console.log(styleVars);
+
   return (
     <motion.div
       initial={{ y: -150 }}
