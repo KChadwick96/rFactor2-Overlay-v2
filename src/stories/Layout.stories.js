@@ -4,7 +4,6 @@ import SessionBanner, { STATES, SESSIONS } from "../components/SessionBanner/Ses
 import StandingRow, { VARIANTS } from "../components/StandingRow/StandingRow";
 import DriverTag from "../components/DriverTag/DriverTag";
 import FastestLap from "../components/FastestLap/FastestLap";
-import FastestLapV2 from "../components/FastestLap/FastestLapV2";
 
 import "./LayoutExample.scss";
 
@@ -54,7 +53,7 @@ export const raceStandard = () => (
       <StandingRow position={index + 1} {...props} />
     ))}
 
-    <FastestLapV2 firstName="Kieran" lastName="Chadwick" lapTime="1:27.456" className="fastest-lap-example" />
+    <FastestLap firstName="Kieran" lastName="Chadwick" lapTime="1:27.456" className="fastest-lap-example" />
 
     <DriverTag position={1} name="Kieran Chadwick" team="A racing team" className="onboard-example" />
   </div>
