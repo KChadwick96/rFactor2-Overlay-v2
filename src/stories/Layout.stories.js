@@ -53,7 +53,7 @@ export const raceStandard = () => (
       <StandingRow position={index + 1} {...props} />
     ))}
 
-    <FastestLap driverName="Kieran Chadwick" lapTime="1:27.456" className="fastest-lap-example" />
+    <FastestLap firstName="Kieran" lastName="Chadwick" lapTime="1:27.456" className="fastest-lap-example" />
 
     <DriverTag position={1} name="Kieran Chadwick" team="A racing team" className="onboard-example" />
   </div>
