@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 
 import "./FastestLapV2.scss";
+import styleVars from "../../scss/variables.scss";
 
 const INITIAL_WIDTH = 230;
 
@@ -12,6 +13,8 @@ const DEFAULT_SPRING = {
 };
 
 const FastestLap = ({ firstName, lastName, lapTime, className }) => {
+  const classNames = useMemo(() => ["fastest-lap-v2", className].join(" "), [className]);
+  console.log(styleVars);
   return (
     <motion.div
       initial={{ y: -150 }}
@@ -24,20 +27,20 @@ const FastestLap = ({ firstName, lastName, lapTime, className }) => {
         }
       }}
       style={{ width: INITIAL_WIDTH }}
-      className="fastest-lap-v2"
+      className={classNames}
     >
       <motion.div
         className="fastest-lap-v2__container"
-        initial={{ backgroundColor: "#6c0cb3", color: "#ffffff" }}
-        animate={{ backgroundColor: "#000b1c", color: "#cd04db" }}
+        initial={{ backgroundColor: styleVars.colorPurple, color: styleVars.colorWhite }}
+        animate={{ backgroundColor: styleVars.colorPrimaryDark, color: styleVars.colorPink }}
         transition={DEFAULT_SPRING}
       >
         FASTEST LAP
       </motion.div>
       <motion.div
         className="fastest-lap-v2__details"
-        initial={{ width: 0, backgroundColor: "#6c0cb3", opacity: 0 }}
-        animate={{ x: INITIAL_WIDTH, width: "300px", backgroundColor: "#000b1c", opacity: 1 }}
+        initial={{ width: 0, backgroundColor: styleVars.colorPurple, opacity: 0 }}
+        animate={{ x: INITIAL_WIDTH, width: 300, backgroundColor: styleVars.colorPrimaryDark, opacity: 1 }}
         transition={{
           ...DEFAULT_SPRING,
           delay: 2,
