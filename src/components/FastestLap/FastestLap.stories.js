@@ -10,7 +10,11 @@ export const normal = () => (
 
 export const v2 = () => (
   <div style={{ marginLeft: "120px" }}>
-    <FastestLapV2 />
+    <FastestLapV2
+      firstName={text("First Name", "Kieran")}
+      lastName={text("Last Name", "Chadwick")}
+      lapTime={text("Lap Time", "1:20.467")}
+    />
   </div>
 );
 

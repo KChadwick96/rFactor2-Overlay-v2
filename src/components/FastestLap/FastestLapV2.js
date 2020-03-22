@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 import "./FastestLapV2.scss";
 
+const INITIAL_WIDTH = 230;
+
 const DEFAULT_SPRING = {
   type: "spring",
   damping: 10,
@@ -21,6 +23,7 @@ const FastestLap = ({ firstName, lastName, lapTime, className }) => {
           delay: 2
         }
       }}
+      style={{ width: INITIAL_WIDTH }}
       className="fastest-lap-v2"
     >
       <motion.div
@@ -34,7 +37,7 @@ const FastestLap = ({ firstName, lastName, lapTime, className }) => {
       <motion.div
         className="fastest-lap-v2__details"
         initial={{ width: 0, backgroundColor: "#6c0cb3", opacity: 0 }}
-        animate={{ x: 230, width: "300px", backgroundColor: "#000b1c", opacity: 1 }}
+        animate={{ x: INITIAL_WIDTH, width: "300px", backgroundColor: "#000b1c", opacity: 1 }}
         transition={{
           ...DEFAULT_SPRING,
           delay: 2,
@@ -45,11 +48,11 @@ const FastestLap = ({ firstName, lastName, lapTime, className }) => {
         }}
       >
         <div>
-          <p>Kieran</p>
-          <p className="fastest-lap-v2__last-name">Chadwick</p>
+          <p>{firstName}</p>
+          <p className="fastest-lap-v2__last-name">{lastName}</p>
         </div>
 
-        <div className="fastest-lap-v2__time">1:20.467</div>
+        <div className="fastest-lap-v2__time">{lapTime}</div>
       </motion.div>
     </motion.div>
   );
