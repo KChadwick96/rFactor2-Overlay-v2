@@ -4,10 +4,13 @@ import { withKnobs, text } from "@storybook/addon-knobs";
 import FastestLap from "./FastestLap";
 
 export const normal = () => (
-  <FastestLap
-    driverName={text("driverName", "Craig Baxter")}
-    lapTime={text("lapTime", "1:14.444")}
-  />
+  <div style={{ marginLeft: "120px" }}>
+    <FastestLap
+      firstName={text("First Name", "Kieran")}
+      lastName={text("Last Name", "Chadwick")}
+      lapTime={text("Lap Time", "1:20.467")}
+    />
+  </div>
 );
 
 export default {

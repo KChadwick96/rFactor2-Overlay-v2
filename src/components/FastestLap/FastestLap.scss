@@ -1,31 +1,41 @@
 @import "../../scss/variables.scss";
 
 .fastest-lap {
-  background-color: $color-primary-dark;
-  width: 460px;
-  height: 40px;
   color: $color-white;
+  height: 70px;
   font-size: $font-size-large;
-  border-radius: $border-radius;
-  text-align: center;
   box-shadow: $box-shadow;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
 
-  &__header {
-    padding: 0 $spacing-large;
-    background-color: $color-purple;
-    line-height: 40px;
+  &__container {
+    position: absolute;
+    z-index: 10;
+    background-color: $color-primary-dark;
+    font-weight: $font-weight-bold;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__details {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__last-name {
+    text-transform: uppercase;
     font-weight: $font-weight-bold;
   }
 
-  &__name {
-    padding: $spacing-medium;
-  }
-
   &__time {
-    font-weight: 700;
-    padding: $spacing-medium;
+    padding-left: $spacing-largest;
+    font-size: $font-size-largest;
+    font-weight: $font-weight-bold;
   }
 }

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 
 import usePrevious from "../../hooks/usePrevious";
+import styleVars from "../../scss/variables.scss";
 
 const ICON_SIZE = "18px";
 const POSITION_CHANGE_DURATION = 4000;
@@ -10,13 +11,13 @@ const POSITION_CHANGE_DURATION = 4000;
 const ANIMATIONS = {
   container: {
     gain: {
-      backgroundColor: "#1cad10"
+      backgroundColor: styleVars.colorConstructive
     },
     loss: {
-      backgroundColor: "#bf0000"
+      backgroundColor: styleVars.colorDestructive
     },
     normal: {
-      backgroundColor: "#072047"
+      backgroundColor: styleVars.colorPrimary
     }
   },
   arrow: {
@@ -60,10 +61,7 @@ const Position = ({ position, teamColour }) => {
     clearTimeout(positionChangeTimeout.current);
     setPositionChange(position < previousPosition ? 1 : -1);
 
-    positionChangeTimeout.current = setTimeout(
-      () => setPositionChange(0),
-      POSITION_CHANGE_DURATION
-    );
+    positionChangeTimeout.current = setTimeout(() => setPositionChange(0), POSITION_CHANGE_DURATION);
   }, [position, previousPosition]);
 
   return (
@@ -76,15 +74,8 @@ const Position = ({ position, teamColour }) => {
       {positionChange === 0 ? (
         position
       ) : (
-        <motion.span
-          variants={ANIMATIONS.arrow}
-          transition={{ loop: Infinity, duration: 0.8, repeatDelay: 0.2 }}
-        >
-          {positionChange === 1 ? (
-            <FiArrowUp size={ICON_SIZE} />
-          ) : (
-            <FiArrowDown size={ICON_SIZE} />
-          )}
+        <motion.span variants={ANIMATIONS.arrow} transition={{ loop: Infinity, duration: 0.8, repeatDelay: 0.2 }}>
+          {positionChange === 1 ? <FiArrowUp size={ICON_SIZE} /> : <FiArrowDown size={ICON_SIZE} />}
         </motion.span>
       )}
     </motion.div>
