@@ -40,7 +40,7 @@ const FastestLap = ({ firstName, lastName, lapTime, className }) => {
       <motion.div
         className="fastest-lap__details"
         initial={{ width: 0, backgroundColor: styleVars.colorPurple, opacity: 0 }}
-        animate={{ x: INITIAL_WIDTH, width: 380, backgroundColor: styleVars.colorPrimaryDark, opacity: 1 }}
+        animate={{ x: INITIAL_WIDTH, width: 420, backgroundColor: styleVars.colorPrimaryDark, opacity: 1 }}
         transition={{
           ...DEFAULT_SPRING,
           delay: 2,

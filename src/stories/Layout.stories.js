@@ -5,7 +5,6 @@ import StandingRow, { VARIANTS } from "../components/StandingRow/StandingRow";
 import DriverTag from "../components/DriverTag/DriverTag";
 import FastestLap from "../components/FastestLap/FastestLap";
 
-import onboard from "../img/onboard.jpg";
 import "./LayoutExample.scss";
 
 const STANDINGS = [
@@ -30,6 +29,94 @@ const STANDINGS = [
     gapToLeader: 4.3,
     interval: 3.1,
     pit: true
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1,
+    out: true
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1,
+    out: true
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1,
+    out: true
+  },
+  {
+    driverName: "Baxter",
+    driverNameCode: "BAX",
+    teamColour: "purple",
+    gapToLeader: 100.3,
+    interval: 40.1,
+    out: true
   },
   {
     driverName: "Baxter",
