@@ -6,6 +6,7 @@ import DriverTag from "../components/DriverTag/DriverTag";
 import FastestLap from "../components/FastestLap/FastestLap";
 
 import "./LayoutExample.scss";
+import FastestSector from "../components/FastestSector/FastestSector";
 
 const STANDINGS = [
   {
@@ -138,7 +139,7 @@ export const raceStandard = () => (
       className="--margin-bottom-large"
     />
     {STANDINGS.map((props, index) => (
-      <StandingRow position={index + 1} {...props} />
+      <StandingRow key={index} position={index + 1} {...props} />
     ))}
 
     <FastestLap firstName="Kieran" lastName="Chadwick" lapTime="1:27.456" className="fastest-lap-example" />
@@ -157,7 +158,7 @@ export const raceYellow = () => (
       className="--margin-bottom-large"
     />
     {STANDINGS.map((props, index) => (
-      <StandingRow position={index + 1} {...props} />
+      <StandingRow key={index} position={index + 1} {...props} />
     ))}
 
     <DriverTag position={1} name="Kieran Chadwick" team="A racing team" className="onboard-example" />
@@ -173,8 +174,15 @@ export const timedStandard = () => (
       className="--margin-bottom-large"
     />
     {STANDINGS.map((props, index) => (
-      <StandingRow position={index + 1} {...props} variant={index === 0 ? VARIANTS.FASTEST_LAP : VARIANTS.LEADER_GAP} />
+      <StandingRow
+        key={index}
+        position={index + 1}
+        {...props}
+        variant={index === 0 ? VARIANTS.FASTEST_LAP : VARIANTS.LEADER_GAP}
+      />
     ))}
+
+    <FastestSector sector={1} sectorTime={"28.591"} driverName={"Craig Baxter"} />
 
     <DriverTag position={1} name="Kieran Chadwick" team="A racing team" className="onboard-example" />
   </div>
