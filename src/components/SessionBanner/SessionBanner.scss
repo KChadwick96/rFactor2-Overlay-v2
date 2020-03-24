@@ -3,7 +3,7 @@
 .session-banner {
   padding: $spacing-medium;
   background-color: $color-primary-dark;
-  width: 140px;
+  width: 160px;
   color: $color-white;
   font-size: $font-size-large;
   border-radius: $border-radius;
@@ -41,7 +41,6 @@
     font-weight: $font-weight-bold;
     text-transform: uppercase;
   }
-
 
   &__text {
     flex: 1;

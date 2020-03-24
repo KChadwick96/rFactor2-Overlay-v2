@@ -3,19 +3,19 @@
 .standing-row {
   list-style: none;
   color: $color-white;
-  font-size: $font-size-small;
-  margin-bottom: $spacing-smaller;
+  font-size: $font-size-medium;
   display: flex;
   align-items: center;
   width: 100%;
-  height: 26px;
+  height: 36px;
+  margin-bottom: $spacing-smallest;
 
   &__wrapper {
     display: flex;
     align-items: center;
     border-radius: $border-radius;
     background-color: $color-primary-dark;
-    width: 240px;
+    width: 300px;
     height: 100%;
   }
 
@@ -24,9 +24,9 @@
     font-weight: $font-weight-bold;
     border-bottom-left-radius: $border-radius;
     border-top-left-radius: $border-radius;
-    width: 26px;
+    width: 36px;
     height: 100%;
-    border-right-width: 3px;
+    border-right-width: 4px;
     border-right-style: solid;
     display: flex;
     align-items: center;
@@ -44,13 +44,13 @@
   }
 
   &__pit {
-    margin-left: $spacing-small;
+    margin-left: $spacing-smaller;
     background-color: $color-action;
     padding: $spacing-small;
     border-radius: $border-radius;
     text-transform: uppercase;
     font-weight: $font-weight-bold;
-    font-size: $font-size-smaller;
+    font-size: $font-size-small;
   }
 }
 
@@ -58,12 +58,12 @@
   background-color: #faed00;
   color: black;
   border-radius: 50%;
-  width: 17px;
+  width: 20px;
+  height: 20px;
   text-align: center;
-  height: 17px;
   vertical-align: baseline;
-  line-height: 17px;
+  line-height: 20px;
   font-weight: bold;
-  font-size: $font-size-smaller;
+  font-size: $font-size-small;
   margin-left: $spacing-small;
 }

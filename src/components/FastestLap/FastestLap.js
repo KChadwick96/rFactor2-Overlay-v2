@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "./FastestLap.scss";
 import styleVars from "../../scss/variables.scss";
 
-const INITIAL_WIDTH = 230;
+const INITIAL_WIDTH = 260;
 
 const DEFAULT_SPRING = {
   type: "spring",
@@ -40,7 +40,7 @@ const FastestLap = ({ firstName, lastName, lapTime, className }) => {
       <motion.div
         className="fastest-lap__details"
         initial={{ width: 0, backgroundColor: styleVars.colorPurple, opacity: 0 }}
-        animate={{ x: INITIAL_WIDTH, width: 300, backgroundColor: styleVars.colorPrimaryDark, opacity: 1 }}
+        animate={{ x: INITIAL_WIDTH, width: 420, backgroundColor: styleVars.colorPrimaryDark, opacity: 1 }}
         transition={{
           ...DEFAULT_SPRING,
           delay: 2,
