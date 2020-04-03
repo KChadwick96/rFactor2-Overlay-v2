@@ -3,23 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "framer-motion": "^1.9.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "framer-motion": "^1.10.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/preset-create-react-app": "^2.0.0",
-    "@storybook/react": "^5.3.14",
-    "@storybook/theming": "^5.3.14",
-    "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.4.1",
-    "babel-loader": "^8.0.6",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/preset-create-react-app": "^2.1.1",
+    "@storybook/react": "^5.3.18",
+    "@storybook/theming": "^5.3.18",
+    "babel-loader": "^8.1.0",
     "node-sass": "^4.13.1"
   },
   "scripts": {
