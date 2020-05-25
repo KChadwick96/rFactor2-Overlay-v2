@@ -2,6 +2,7 @@
   "name": "rfactor2-overlay-v2",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "dependencies": {
     "framer-motion": "^1.10.3",
     "react": "^16.13.1",
@@ -18,9 +19,11 @@
     "@storybook/react": "^5.3.18",
     "@storybook/theming": "^5.3.18",
     "babel-loader": "^8.1.0",
+    "electron": "^9.0.0",
     "node-sass": "^4.13.1"
   },
   "scripts": {
+    "electron": "electron .",
     "start": "react-scripts start",
     "build": "build-storybook -c .storybook -o build",
     "test": "react-scripts test",
