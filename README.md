@@ -1,4 +1,4 @@
-# rFactor 2 Overlay React
+# rFactor 2 Overlay
 
 <p align="center">
 	<img  alt="Ninja Labs" src="https://i.imgur.com/bCvPZQF.png" width="200">
@@ -10,7 +10,7 @@
 
 ## Development
 
-### Prerequisites
+### 🤓 Prerequisites
 
 You must have NodeJS and yarn installed on your machine.
 
@@ -21,9 +21,17 @@ Then run the following commands
 yarn
 ```
 
-### Build
+### 🏗 Build
 
 TBC
+
+## 💫 Deploy Storybook
+
+To deploy to [rf2.ninja-labs.co.uk](https://rf2.ninja-labs.co.uk/) you must have Vercel installed
+
+Run `yarn global add vercel` and authenticate using `vc login`
+
+Then run `vercel deploy --prod` 😎
 
 ## License
 
