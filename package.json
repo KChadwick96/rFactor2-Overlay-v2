@@ -7,18 +7,17 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@storybook/addon-knobs": "^5.3.18",
-    "@storybook/addon-links": "^5.3.18",
-    "@storybook/addons": "^5.3.18",
-    "@storybook/preset-create-react-app": "^2.1.1",
-    "@storybook/react": "^5.3.18",
-    "@storybook/theming": "^5.3.18",
+    "@babel/core": "^7.11.4",
+    "@storybook/addon-knobs": "^6.0.16",
+    "@storybook/addons": "^6.0.16",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.16",
+    "@storybook/theming": "^6.0.16",
     "babel-loader": "^8.1.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.14.1"
   },
   "scripts": {
     "start": "react-scripts start",
