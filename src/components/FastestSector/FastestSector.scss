@@ -1,0 +1,51 @@
+@import "../../scss/variables.scss";
+
+.fastest-sector {
+  &__details {
+    width: 200px;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    font-size: $font-size-large;
+    padding: $spacing-medium;
+    border-radius: $border-radius;
+    text-align: center;
+    box-shadow: $box-shadow;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    row-gap: 4px;
+    position: relative;
+  }
+
+  &__number {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  &__name {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  &__time {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    font-weight: $font-weight-bold;
+  }
+
+  &__header {
+    box-shadow: $box-shadow;
+    background-color: $color-purple;
+    color: $color-white;
+    border-radius: $border-radius;
+    padding: $spacing-small;
+  }
+
+  &__header-text {
+    display: flex;
+    flex-direction: column;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-large;
+  }
+}
