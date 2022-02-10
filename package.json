@@ -17,7 +17,7 @@
     "@storybook/react": "^6.0.16",
     "@storybook/theming": "^6.0.16",
     "babel-loader": "^8.1.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
