@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo } from "react";
+import React, { Fragment } from "react";
 
 import flag from "../../img/checkered-flag.jpg";
 
@@ -28,16 +28,12 @@ const SessionBanner = ({
   className = ""
 }) => {
   const isRace = session === SESSIONS.RACE;
-  const classNames = useMemo(
-    () =>
-      [
-        "session-banner",
-        isRace ? "session-banner--counter" : "session-banner--timer",
-        state === STATES.YELLOW ? "session-banner--yellow" : "",
-        className
-      ].join(" "),
-    [className, state, isRace]
-  );
+  const classNames = [
+    "session-banner",
+    isRace ? "session-banner--counter" : "session-banner--timer",
+    state === STATES.YELLOW ? "session-banner--yellow" : "",
+    className
+  ].join(" ");
 
   return (
     <div className={classNames}>

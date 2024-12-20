@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 import "./FastestLap.scss";
@@ -13,7 +13,7 @@ const DEFAULT_SPRING = {
 };
 
 const FastestLap = ({ firstName, lastName, lapTime, className }) => {
-  const classNames = useMemo(() => ["fastest-lap", className].join(" "), [className]);
+  const classNames = ["fastest-lap", className].join(" ");
 
   return (
     <motion.div
